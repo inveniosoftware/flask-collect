@@ -3,6 +3,7 @@
 # This file is part of Flask-Collect-Invenio.
 # Copyright (C) 2014 CERN.
 # Copyright (C) 2021 TU Wien.
+# Copyright (C) 2025 Graz University of Technology.
 #
 # Flask-Collect-Invenio is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -47,10 +48,10 @@ class Storage(BaseStorage):
                 if os.path.islink(destination):
                     os.remove(destination)
                 os.symlink(f, destination)
-                self.log("{0}:{1} symbolink link created".format(bp.name, o))
+                self.log(f"{bp.name}:{o} symbolink link created")
 
             else:
                 skipped += 1
             total += 1
-        self.log("{0} of {1} files already present".format(skipped, total))
+        self.log(f"{skipped} of {total} files already present")
         self.log("Done collecting.")

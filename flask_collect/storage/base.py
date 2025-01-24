@@ -4,6 +4,7 @@
 # Copyright (C) 2012, 2013 Kirill Klenov.
 # Copyright (C) 2014, 2016 CERN.
 # Copyright (C) 2021       TU Wien.
+# Copyright (C) 2025 Graz University of Technology.
 #
 # Flask-Collect-Invenio is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -11,13 +12,11 @@
 
 """Abstract File Storage."""
 
-from __future__ import print_function
-
 from os import path as op
 from os import walk
 
 
-class BaseStorage(object):
+class BaseStorage:
     """Base class for storages."""
 
     def __init__(self, collect, verbose=False):
@@ -56,7 +55,7 @@ class BaseStorage(object):
                             )
 
                         if tpath in destination_list:
-                            self.log("{0} already sourced".format(tpath))
+                            self.log(f"{tpath} already sourced")
                             continue
 
                         destination_list.add(tpath)
