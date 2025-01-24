@@ -4,6 +4,7 @@
 # Copyright (C) 2012, 2014 Kirill Klenov.
 # Copyright (C) 2014, 2016 CERN.
 # Copyright (C) 2021       TU Wien.
+# Copyright (C) 2025 Graz University of Technology.
 #
 # Flask-Collect-Invenio is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -42,7 +43,5 @@ class Storage(BaseStorage):
 
             copy(f, destination)
             self.log(
-                "Copied: [{0}] '{1}'".format(
-                    bp.name, op.join(self.collect.static_url, destination)
-                )
+                f"Copied: [{bp.name}] '{op.join(self.collect.static_url, destination)}'"
             )

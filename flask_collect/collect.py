@@ -3,6 +3,7 @@
 # This file is part of Flask-Collect-Invenio.
 # Copyright (C) 2012 - 2016 Kirill Klenov.
 # Copyright (C) 2021        TU Wien.
+# Copyright (C) 2025 Graz University of Technology.
 #
 # Flask-Collect-Invenio is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -18,7 +19,7 @@ from werkzeug.utils import import_string
 collect_proxy = LocalProxy(lambda: current_app.extensions["collect"].collect)
 
 
-class _CollectState(object):
+class _CollectState:
     """Extension state."""
 
     def __init__(self, app):
@@ -50,7 +51,7 @@ class _CollectState(object):
         return storage.run()
 
 
-class Collect(object):
+class Collect:
     """Extension object for integration to one or more Flask applications.
 
     :param app: Flask application
